@@ -1,0 +1,30 @@
+<h1>All States</h1>
+<h6>well... not all of them..</h6>
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>capital</th>
+		<th>population</th>
+		<th>area</th>
+	</tr>
+	<% @states.each do |state| %>
+		<tr>
+			<td><%= state.name %></td>
+			<td>
+				<%= state.capital %>
+			</td>
+			<td>
+				<%= number_to_human(state.population) %>
+			</td>
+			<td>
+				<%= state.area %>
+			</td>	
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to "Population", pop_path %>
+<br>
+<%= link_to "Area", area_path %>
+<br>
+<%= link_to "Back Home", root_path %>
